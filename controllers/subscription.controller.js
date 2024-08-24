@@ -73,7 +73,11 @@ const unsubscribeController = asyncHandler(async (req, res) => {
 
 	await Subscription.findOneAndDelete({ email });
 
-	res.redirect("https://dev-inertia-blog.netlify.app/");
+	res.redirect("/unsubscribe-redirect");
+});
+
+const unsubscribeRedirectController = asyncHandler(async (req, res) => {
+	res.status(200).sendFile(path.join(__dirname, "../public", "pages", "unsubscribe.html"));
 });
 
 const sendSubscribersMailController = asyncHandler(async (req, res) => {
@@ -144,4 +148,5 @@ export {
 	unsubscribeController,
 	sendSubscribersMailController,
 	viewFormController,
+	unsubscribeRedirectController,
 };

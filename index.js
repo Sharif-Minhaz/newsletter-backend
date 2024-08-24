@@ -10,6 +10,7 @@ import {
 	sendSubscribersMailController,
 	subscribeController,
 	unsubscribeController,
+	unsubscribeRedirectController,
 	viewFormController,
 } from "./controllers/subscription.controller.js";
 
@@ -29,6 +30,7 @@ app.use([
 
 app.post("/subscribe", subscribeController);
 app.get("/unsubscribe/:email", unsubscribeController);
+app.get("/unsubscribe-redirect", unsubscribeRedirectController);
 app.get("/send", viewFormController);
 app.post("/send", sendSubscribersMailController);
 
