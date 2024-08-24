@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-inline: auto;
+    }
+
+    input,
+    textarea,
+    button {
+        padding: 10px 14px;
+    }
+</style>
+
+<body>
+    <form method="post" action="/send">
+        <input placeholder="Admin Key" name="key" type="text" required>
+        <input placeholder="Title of the blog" name="title" type="text" required>
+        <input placeholder="Link of the blog" name="link" type="url" required>
+        <input placeholder="Thumbnail's url" name="thumbnailUrl" type="url" required>
+        <textarea rows="16" placeholder="Details of the blog" name="details" id=""></textarea>
+        <button type="submit">Send mails</button>
+    </form>
+</body>
+
+</html>
